@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e35a2edc48.js" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        input {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            font-size: 20px;
+            padding: 10px;
+        }
+        #screen {
+            width: 250px;
+            border: 2px solid black;
+        }
+        h1{
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+        <h1>Calculator</h1>
+        <form>
+           
+            <table align="center" style="border:3px solid black;">
+               
+            <tr>
+                <td>
+                    <h4><b><i>Casio</i></b><i class="fa-solid fa-calculator"></i></h4> 
+                <input type="text" id="screen" placeholder="0000000000" style="background-color:rgb(179, 244, 113) ;" required autofocus>
+            </td>
+        </tr>
+                    <br><br>
+                    <tr>
+                        <td>
+                    <input type="reset" style="background-color:white ;" value="c">
+                    <input type="button" style="background-color:white ;" value="%" onclick="test('%')">
+                    <input type="button" style="background-color:white ;" value="del" onclick="test8()">
+                    <input type="button" style="border-radius:100% ; color:black; background-color: whitesmoke;" value="/" onclick="test('/')">
+            <br>
+                    <input type="button" style="background-color:white ;" value="7" onclick="test(7)">
+                    <input type="button" style="background-color:white ;" value="8" onclick="test(8)">
+                    <input type="button" style="background-color:white ;" value="9" onclick="test(9)">
+                    <input type="button" style="border-radius:100%; background-color:whitesmoke;" value="*" onclick="test('*')">
+                <br>
+                    <input type="button" style="background-color:white ;" value="4" onclick="test(4)">
+                    <input type="button" style="background-color:white ;" value="5" onclick="test(5)">
+                    <input type="button" style="background-color:white ;" value="6" onclick="test(6)">
+                    <input type="button" style="border-radius:100%; background-color:whitesmoke;" value="-" onclick="test('-')">
+              <br>
+                    <input type="button" style="background-color:white ;" value="1" onclick="test(1)">
+                    <input type="button" style="background-color:white ;" value="2" onclick="test(2)">
+                    <input type="button" style="background-color:white ;" value="3" onclick="test(3)">
+                    <input type="button" style="border-radius:100%; background-color:whitesmoke;" value="+" onclick="test('+')">
+                <br>
+                    <input type="button" style="background-color:white ;" value="00" onclick="test(00)">
+                    <input type="button" style="background-color:white ;" value="0" onclick="test(0)">
+                    <input type="button" style="background-color:white ;" value="." onclick="test('.')">
+                    <input type="button" style="border-radius:100%; background-color: aqua;" value="=" onclick="test1('=')">
+                </td>
+                </tr>
+                </table>
+        </form>
+
+
+
+
+    <script>
+        function test(num) {
+            document.getElementById("screen").value += num
+        }
+        function test1() {
+            document.getElementById("screen").value = eval(document.getElementById("screen").value)
+        }
+        function test8(){
+            var num=document.getElementById("screen").value.slice(0,-1)
+            document.getElementById("screen").value=num
+           console.log("result value.......",num)
+        } 
+    </script>
+</body>
+</html>
